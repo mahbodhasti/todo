@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
-const port = process.env.PORT || 8080;
+const port = 8080;
 const mongoose = require("mongoose");
 const { name } = require("ejs");
 const _ =require("lodash")
@@ -12,7 +12,7 @@ const _ =require("lodash")
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 // "mongodb://localhost:27017/todolistDB"
-mongoose.connect("mongodb+srv://admin-mahbod:7363556m@cluster0.aikds.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/todolist", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://admin-mahbod:7363556m@cluster0.aikds.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("Successfully connected to the database.");
     })
