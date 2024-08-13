@@ -106,7 +106,8 @@ a {
 	text-align: center;
 }
 
-.navbar {
+/* .navbar1 {
+	
 	margin: 10px auto auto 1100px;
 	padding: 1rem;
 	background-color: rgb(86, 136, 141);
@@ -115,8 +116,41 @@ a {
 	font-weight: bold;
 	width: 150px;
 	border-radius: 10px;
+} */
+
+/* .navbar a {
+  color: #000;
+} */
+
+/* Default Styles for Larger Screens */
+.navbar1 {
+    margin: 10px auto auto 1100px; /* Adjust this for larger screens */
+    padding: 1rem;
+    background-color: rgb(86, 136, 141);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    width: 150px;
+    border-radius: 10px;
+    /* Ensure it’s positioned in the normal flow */
+    display: inline-block;
 }
 
-.navbar a {
-  color: #000;
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 768px) {
+    .navbar1 {
+        position: fixed; /* Fixes the position */
+        top: 10px; /* Distance from the top */
+        left: 10px; /* Distance from the left */
+        margin: 0; /* Remove margins */
+        padding: 1rem; /* Maintain padding */
+        background-color: rgb(86, 136, 141);
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        width: 150px; /* Width remains the same */
+        border-radius: 10px;
+        /* Ensures it’s not affected by normal flow */
+        z-index: 1000; /* Keeps it on top of other content */
+    }
 }

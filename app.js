@@ -54,35 +54,7 @@ const defaultItem =[item1,item2,item3]
 
 	var day = today.toLocaleDateString("en-US", options);
 
-// app.get("/:title", (req, res) => {
-// 	var today = new Date();
-// 	var options = {
-// 		weekday: "long",
-// 		month: "long",
-// 		day: "numeric"
-// 	};
 
-// 	var day = today.toLocaleDateString("en-US", options);
-// 		Item.find({}).then((foundItems)=>{
-// 		console.log(foundItems)
-// 		if (foundItems.length == 0){
-// 			Item.insertMany(defaultItem).then(
-// 				()=>{console.log("successfully")}
-// 			).catch(
-// 				(err)=>{console.log("faaill")}
-// 			)
-// 			res.redirect("/" + (req.body.params))
-// 		}else{
-// 		const title=req.body.params
-// 			res.render("list", {  listTitle:title , newListItems: foundItems });
-// 		}	
-// 	}).catch((err)=>{
-// 		console.log(err)
-// 	})
-
-
-	
-// });
 app.get("/", async (req, res) => {
     try {
         const today = new Date();
@@ -163,29 +135,7 @@ app.post("/", (req, res) => {
 });
 	
 		
-// });
-// app.post("/:title",async (req, res) => {
-// 	var item = req.body.newItem;
-// 	listName = req.body.list
-// 	try {
-//         if (req.params.title === "/") {
-//             // Assuming 'Item' is your Mongoose model
-//             const newItem = new Item({
-//                 name: item,
-//             });
 
-//             await newItem.save(); // Wait for the save operation to complete
-//             res.redirect("/");
-//         } else {
-//             // Assuming 'items' is an array somewhere in your code
-//             Item.items.push(item);
-//             res.redirect("/" + req.params.title); // Redirect to the specified title
-//         }
-//     } catch (error) {
-//         console.error("Error handling POST request:", error);
-//         res.status(500).send("Something went wrong!"); // Handle the error gracefully
-//     }
-// });
 
 app.post("/delete",(req,res)=>{
 	const chekedId =  req.body.checkbox
@@ -209,25 +159,9 @@ app.post("/delete",(req,res)=>{
 
 })
 
-// app.get  ("/:coustomList",async (req, res) => {
-// 	const coustomList =req.params.coustomList
-// 	await List.find({name:coustomList}).then((foundOne)=>{
-// 		if(!foundOne){
-// 			console.log("dosent exist")
-// 			const list = new List({
-// 				name:coustomList,
-// 				items:defaultItem
-// 			})
-// 			 list.save()
-// 		}else{
-// 		console.log('already create')}
-// 	}).catch((err)=>{console.log(err)})
-	
-	
 
-// 	res.render("list", { listTitle:coustomList, newListItems: workItems });
 
-// });
+
 app.get("/:customList", async (req, res) => {
     const customListName = _.capitalize(req.params.customList);
 
@@ -263,7 +197,11 @@ app.get("/:customList", async (req, res) => {
 app.get("/about", (req, res) => {
 	res.render("about");
 });
+app.get('/moon/home',(req,res)=>{
+    res.render("moon.ejs")
+})
 
 app.listen(port, () => {
 	console.log(`Listening on port ${port}...`);
 });
+
