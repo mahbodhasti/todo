@@ -137,10 +137,10 @@ a {
 }
 
 /* Responsive Styles for Smaller Screens */
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
     .navbar1 {
         position: fixed; /* Fixes the position */
-        top: 10px; /* Distance from the top */
+        top: 5px; /* Distance from the top */
         left: 10px; /* Distance from the left */
         margin: 0; /* Remove margins */
         padding: 1rem; /* Maintain padding */
@@ -148,7 +148,8 @@ a {
         color: #fff;
         text-decoration: none;
         font-weight: bold;
-        width: 150px; /* Width remains the same */
+        width: 100px; /* Width remains the same */
+		height: 35px;
         border-radius: 10px;
         /* Ensures it’s not affected by normal flow */
         z-index: 1000; /* Keeps it on top of other content */
